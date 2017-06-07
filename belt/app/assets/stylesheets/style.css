@@ -1,0 +1,26 @@
+table, th, td{
+    border: 1px solid black;
+    text-align:center;
+}
+.wrapper{
+    width: 1000px;
+}
+.register{
+    height:auto;
+    width:300px;
+    border:1px solid black;
+    padding: 20px;
+    display: inline-block;
+
+}
+.login{
+    height:auto;
+    width:300px;
+    border:1px solid black;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+.error{
+    color:red;
+}

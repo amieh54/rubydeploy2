@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <div class="wrapper">
+
+
+        <div class="register">
+
+
+        <h2>Register</h2>
+        <% if flash[:errors]%>
+        <% flash[:errors].each do |x|%>
+        <ul>
+            <div class="error">
+        <li><%=x%></li>
+    </div>
+    </ul>
+        <%end%>
+        <%end%>
+        <form action="/users/create" method="post">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="text" name="user[first_name]" placeholder="First Name">
+            <input type="text" name="user[last_name]" placeholder="Last Name">
+            <input type="text" name="user[email]" placeholder="Email">
+            <input type="password" name="user[password]" placeholder="Password">
+            <input type="password" name="user[password_confirmation]" placeholder="Password Confirmation">
+<input type="submit" name="submit" value="Register">
+    </form>
+</div>
+<div class="login">
+
+
+            <h2>Login</h2>
+            <% if flash[:logerrors]%>
+            <% flash[:logerrors].each do |x|%>
+            <ul>
+
+<div class="error">
+
+
+            <li><%=x%></li>
+            </div>
+            </ul>
+            <%end%>
+            <%end%>
+            <form action="/sessions/new" method="post">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="text" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Password">
+                <input type="submit" name="submit" value="Login">
+            </form>
+            </div>
+</div>
+
+    </body>
+</html>

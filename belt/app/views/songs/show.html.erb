@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h3><a href = "/users/<%=@user.id%>">Dashboard</a></h3>
+        <h3>Others Who Added <%=@song.artist%> - <%=@song.title%>:</h3>
+<table>
+    <th>Name</th>
+    <th>Times Added</th>
+<%@song.users.uniq.each do |x|%>
+    <tr>
+        <td><a href="/users/<%=x.id%>/list"><%=x.first_name%> <%=x.last_name%></a></td>
+
+
+        <td><%=@lists.where(user_id:x.id).count%></td>
+    </tr>
+    <%end%>
+</table>
+
+    </body>
+</html>
